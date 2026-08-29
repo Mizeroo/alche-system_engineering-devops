@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Connects to the ALCHE server using the private key ~/.ssh/school
+ssh -i ~/.ssh/school ubuntu@44.201.176.129
