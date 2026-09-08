@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 — Ceci n'est pas une page</title>
+<style>
+  :root{
+    --sky-top:#a9c8e0;
+    --sky-bottom:#e7eef2;
+    --cloud:#fbfcfb;
+    --ink:#2b2420;
+    --hat:#1f1b18;
+    --hat-shadow:#0f0d0b;
+    --pipe:#3c2a1e;
+    --pipe-shine:#5c4230;
+    --caption:#3a332c;
+  }
+
+  *{ box-sizing:border-box; }
+
+  html,body{
+    margin:0;
+    height:100%;
+  }
+
+  body{
+    font-family: "Iowan Old Style","Palatino Linotype",Georgia,serif;
+    background: linear-gradient(180deg, var(--sky-top) 0%, var(--sky-bottom) 78%);
+    color:var(--ink);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    position:relative;
+  }
+
+  .code-mark{
+    position:absolute;
+    top:28px;
+    left:32px;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size:13px;
+    letter-spacing:0.04em;
+    color: rgba(43,36,32,0.45);
+  }
+
+  .cloud{
+    position:absolute;
+    background: var(--cloud);
+    border-radius:100px;
+    opacity:0.85;
+    filter: blur(0.5px);
+  }
+  .cloud::before, .cloud::after{
+    content:"";
+    position:absolute;
+    background:inherit;
+    border-radius:100px;
+  }
+  .c1{ width:180px; height:56px; top:12%; left:8%; }
+  .c1::before{ width:90px; height:90px; top:-45px; left:20px; }
+  .c1::after{ width:70px; height:70px; top:-32px; left:95px; }
+
+  .c2{ width:140px; height:44px; top:20%; right:10%; opacity:0.7; }
+  .c2::before{ width:70px; height:70px; top:-34px; left:15px; }
+  .c2::after{ width:56px; height:56px; top:-24px; left:75px; }
+
+  .c3{ width:120px; height:38px; bottom:16%; left:14%; opacity:0.6; }
+  .c3::before{ width:60px; height:60px; top:-28px; left:14px; }
+
+  .stage{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    max-width:560px;
+    padding:0 32px;
+  }
+
+  .scene{
+    position:relative;
+    width:220px;
+    height:220px;
+    margin:0 auto 8px;
+  }
+
+  .hat{
+    position:absolute;
+    left:50%;
+    top:38px;
+    transform: translateX(-50%);
+    animation: hover 6s ease-in-out infinite;
+  }
+
+  .pipe{
+    position:absolute;
+    left:50%;
+    top:118px;
+    transform: translateX(-58%);
+    animation: hover 6s ease-in-out infinite;
+    animation-delay: -1.4s;
+  }
+
+  @keyframes hover{
+    0%, 100% { transform: translateX(-50%) translateY(0px); }
+    50% { transform: translateX(-50%) translateY(-10px); }
+  }
+  .pipe{
+    animation-name: hoverPipe;
+  }
+  @keyframes hoverPipe{
+    0%, 100% { transform: translateX(-58%) translateY(0px); }
+    50% { transform: translateX(-58%) translateY(-6px); }
+  }
+
+  .ground-shadow{
+    position:absolute;
+    bottom:6px;
+    left:50%;
+    width:120px;
+    height:14px;
+    transform:translateX(-50%);
+    background: radial-gradient(ellipse at center, rgba(15,13,11,0.22) 0%, rgba(15,13,11,0) 70%);
+  }
+
+  .caption{
+    font-style: italic;
+    font-size: clamp(26px, 4vw, 36px);
+    letter-spacing: 0.01em;
+    color: var(--caption);
+    margin: 12px 0 6px;
+  }
+
+  .sub{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(43,36,32,0.72);
+    margin: 0 0 28px;
+  }
+
+  .home-link{
+    display:inline-block;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: var(--ink);
+    text-decoration: none;
+    padding: 10px 22px;
+    border: 1px solid rgba(43,36,32,0.35);
+    border-radius: 2px;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  .home-link:hover{
+    background: var(--ink);
+    color: var(--sky-bottom);
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .hat, .pipe{ animation: none; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="code-mark">404 / page not found</div>
+
+  <div class="cloud c1"></div>
+  <div class="cloud c2"></div>
+  <div class="cloud c3"></div>
+
+  <div class="stage">
+    <div class="scene">
+      <div class="ground-shadow"></div>
+
+      <svg class="pipe" width="130" height="70" viewBox="0 0 130 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 40 C8 24 22 14 40 14 L86 14 C96 14 104 22 104 32 C104 42 96 50 86 50 L46 50" stroke="#3c2a1e" stroke-width="10" stroke-linecap="round"/>
+        <path d="M40 14 L40 8" stroke="#3c2a1e" stroke-width="10" stroke-linecap="round"/>
+        <ellipse cx="40" cy="8" rx="9" ry="5" fill="#5c4230"/>
+        <path d="M12 40 C12 28 23 20 38 19" stroke="#5c4230" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+      </svg>
+
+      <svg class="hat" width="150" height="90" viewBox="0 0 150 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="75" cy="66" rx="70" ry="14" fill="#1f1b18"/>
+        <ellipse cx="75" cy="64" rx="58" ry="10" fill="#0f0d0b"/>
+        <path d="M40 60 C40 26 55 8 75 8 C95 8 110 26 110 60 Z" fill="#1f1b18"/>
+        <path d="M46 58 C47 30 59 14 75 14 C91 14 103 30 104 58 Z" fill="#2a2521"/>
+      </svg>
+    </div>
+
+    <p class="caption">Ceci n'est pas une page.</p>
+    <p class="sub">The address you followed doesn't lead anywhere real —<br>
+       much like a painting of a pipe was never a pipe.</p>
+
+    <a class="home-link" href="/">Take me somewhere real</a>
+  </div>
+
+</body>
+</html>
