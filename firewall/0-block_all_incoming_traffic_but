@@ -1,0 +1,15 @@
+sudo apt-get update
+sudo apt-get install -y ufw
+sudo ufw allow 22/tcp
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw enable
+
+# Verified with:
+# telnet 44.201.176.129 22   -> connected
+# telnet 44.201.176.129 80   -> connected
+# telnet 44.201.176.129 443  -> connection refused (no service listening, not blocked)
+# telnet 44.201.176.129 21   -> hangs, no response (blocked)
+
