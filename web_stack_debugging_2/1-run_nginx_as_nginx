@@ -12,10 +12,10 @@ sed -i 's/listen \[::\]:80 default_server ipv6only=on;/listen [::]:8080 default_
 
 chown -R nginx:nginx /var/log/nginx
 
-nginx -t
 pkill nginx
 rm -f /tmp/nginx.pid
-su -s /bin/bash nginx -c 'nginx'
 
-ps auxff | grep ngin[x]
-ss -ltnp | grep 8080
+nginx -t
+rm -f /tmp/nginx.pid
+
+su -s /bin/bash nginx -c 'nginx'
