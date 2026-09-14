@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Configures Nginx to listen on port 80
+
+cp /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+kill "$(pgrep -o nginx)"
+nginx
