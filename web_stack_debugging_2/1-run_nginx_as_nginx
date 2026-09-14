@@ -16,3 +16,6 @@ nginx -t
 pkill nginx
 rm -f /tmp/nginx.pid
 su -s /bin/bash nginx -c 'nginx'
+
+ps auxff | grep ngin[x]
+ss -ltnp | grep 8080
